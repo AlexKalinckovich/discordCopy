@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/authorization.css}">
+</head>
+<body>
+<div class="login-container">
+    <div class="login-box">
+        <h2>Войти в аккаунт</h2>
+        <div th:if="${error}" class="error-message">
+            <p th:text="${error}"></p>
+        </div>
+        <form th:action="@{/authorization}" method="post">
+            <div class="input-group">
+                <label for="username">Имя пользователя</label>
+                <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="login-button">Войти</button>
+            </div>
+        </form>
+        <div class="register-link">
+            <a th:href="@{/register}">Зарегистрировать аккаунт</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

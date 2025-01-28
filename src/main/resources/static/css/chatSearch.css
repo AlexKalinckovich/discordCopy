@@ -1,0 +1,67 @@
+/* Стили для контейнера поиска */
+.search-container {
+    position: fixed; /* Фиксируем контейнер в верхней части */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #40444b;
+    z-index: 1000; /* Убедимся, что контейнер находится поверх других элементов */
+}
+
+#searchChatInput {
+    width: 60%; /* Увеличим ширину поля ввода */
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #484c52;
+    color: white;
+}
+
+#searchChatButton {
+    padding: 10px 20px; /* Увеличим отступы */
+    background-color: #7289da;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+#searchChatButton:hover {
+    background-color: #677bc4;
+}
+
+/* Стили для выпадающего списка */
+.dropdown-results {
+    position: absolute;
+    top: 100%; /* Располагаем список под полем ввода */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #36393f;
+    border: 1px solid #7289da;
+    list-style-type: none;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 60%; /* Ширина списка соответствует ширине поля ввода */
+    margin: 0;
+    padding: 0;
+    z-index: 1001; /* Убедимся, что список находится поверх других элементов */
+}
+
+.dropdown-results li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #484c52;
+}
+
+.dropdown-results li:hover {
+    background-color: #484c52;
+}
+
+.dropdown-results li.no-results {
+    color: #ccc;
+    text-align: center;
+}

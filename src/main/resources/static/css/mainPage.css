@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #36393f;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Основные стили для контейнера чата */
+.main-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    max-width: 1200px;
+    background-color: #2f3136;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для списка чатов */
+.chat-list {
+    width: 250px;
+    background-color: #2f3136;
+    padding: 16px;
+    border-right: 1px solid #40444b;
+    overflow-y: auto;
+}
+
+.chat-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chat-list ul li {
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #40444b;
+    margin-bottom: 8px;
+    transition: background-color 0.2s;
+}
+
+.chat-list ul li:hover {
+    background-color: #7289da;
+}
+
+#createChatButton {
+    background-color: #7289da;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+}
+
+/* Стили для контейнера сообщений */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #36393f;
+}
+
+/* Стили для области сообщений */
+.messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background-color: #36393f;
+    scrollbar-width: thin;
+    scrollbar-color: #7289da #2f3136;
+}
+
+/* Стили для полосы прокрутки */
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #7289da;
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background-color: #2f3136;
+}
+
+/* Стили для каждого сообщения */
+.message {
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background-color: #40444b;
+    border-radius: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+/* Стили для имени пользователя */
+.username {
+    font-weight: bold;
+    color: #7289da;
+    margin-right: 8px;
+}
+
+/* Стили для текста сообщения */
+.message-text {
+    color: #ffffff;
+}
+
+/* Стили для области ввода */
+.input-area {
+    display: flex;
+    padding: 12px;
+    background-color: #40444b;
+    border-top: 1px solid #2f3136;
+}
+
+/* Стили для поля ввода сообщения */
+#messageInput {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #484c52;
+    color: #ffffff;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+/* Стили для кнопки отправки */
+#sendButton {
+    padding: 8px 16px;
+    background-color: #7289da;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+#sendButton:hover {
+    background-color: #677bc4;
+}
+
+/* Стили для активного чата */
+.active-chat {
+    background-color: #0b2a79;
+    color: #ffffff;
+}
+
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#chatNameInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #484c52;
+    color: white;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    width: 300px;
+    padding: 20px;
+    margin: auto;
+    background-color: #2f3136;
+    border-radius: 8px;
+    color: white;
+}
+
+
+#submitChatName {
+    width: 100%;
+    padding: 10px;
+    background-color: #7289da;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

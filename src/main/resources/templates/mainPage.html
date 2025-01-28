@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чат</title>
+    <link rel="stylesheet" href="/css/mainPage.css">
+    <link rel="stylesheet" href="/css/chatSearch.css">
+</head>
+<body>
+<div class="search-container">
+    <label for="searchChatInput"></label><input type="text" id="searchChatInput" placeholder="Введите название чата для поиска">
+    <button id="searchChatButton">Поиск</button>
+    <ul id="searchResults" class="dropdown-results"></ul> <!-- Выпадающий список для результатов поиска -->
+</div>
+<div class="main-container">
+
+    <!-- Левый контейнер для списка чатов -->
+    <div class="chat-list">
+        <button id="createChatButton">Создать новый чат</button>
+        <ul id="chatItems">
+            <!-- Отображаем список чатов пользователя -->
+            <!--/*@thymesVar id="chats" type="com.example.demo.Models.Chat"*/-->
+            <li th:each="chat : ${chats}" th:data-chat-id="${chat.id}" th:text="${chat.name}" class="chat-item">Имя чата</li>
+        </ul>
+    </div>
+
+    <!-- Основной контейнер для сообщений чата -->
+    <div class="chat-container">
+        <div class="messages" id="messages">
+            <!-- Отображение сообщений чата -->
+            <!--/*@thymesVar id="messages" type="com.example.demo.Models.Message"*/-->
+            <div th:each="message : ${messages}" class="message">
+                <!--/*@thymesVar id="sender" type="com.example.demo.Models.User"*/-->
+                <span class="username" th:text="${message.sender.username} + ':'">Имя пользователя</span>
+                <!-- Текст сообщения -->
+                <span class="message-text" th:text="${message.messageText}">Текст сообщения</span>
+            </div>
+        </div>
+
+        <!-- Форма для отправки сообщения -->
+        <div class="input-area">
+            <label for="messageInput"></label>
+            <input type="text" id="messageInput" placeholder="Введите сообщение...">
+            <button id="sendButton">Отправить</button>
+        </div>
+    </div>
+</div>
+
+<!-- Подключение JavaScript -->
+
+<!-- Модальное окно для создания чата -->
+<div id="createChatModal" class="modal">
+    <div class="modal-content">
+        <h2>Создать новый чат</h2>
+        <label for="chatNameInput"></label><input type="text" id="chatNameInput" placeholder="Введите название чата">
+        <button id="submitChatName">Создать</button>
+    </div>
+</div>
+
+</body>
+</html>
